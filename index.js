@@ -24,6 +24,7 @@ async function run() {
 
         const db = client.db('reliefAid');
         const user = db.collection('users');
+        const good = db.collection('goods');
 
         // User Registration
         app.post('/api/v1/register', async (req, res) => {
@@ -97,7 +98,22 @@ app.post('/api/v1/login', async (req, res) => {
 
 
         // ==============================================================
-        // WRITE YOUR CODE HERE
+        app.get('/api/v1/goods', async (req, res) => {
+            try {
+                const goods = await good.find().toArray();
+                res.status(200).json({
+                    success: true,
+                    message: 'Goods retrieved successfully',
+                    data: goods
+                });
+            } catch (error) {
+                console.error('Error fetching users:', error);
+                res.status(500).json({ 
+                    success: false,
+                    message: 'Internal server error' 
+                });
+            }
+        });
         // ==============================================================
 
 
