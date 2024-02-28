@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
@@ -114,6 +114,33 @@ app.post('/api/v1/login', async (req, res) => {
                 });
             }
         });
+        app.get('/api/v1/goods/:id', async (req, res) => {
+            try {
+                const id = req.params.id;
+                 const query = { _id: new ObjectId(id) };
+                const singleGood = await good.findOne(query); // Use findById method of Mongoose to find a good by its ID
+                
+                if (!singleGood) {
+                    return res.status(404).json({ 
+                        success: false,
+                        message: 'Good not found'
+                    });
+                }
+        
+                res.status(200).json({ 
+                    success: true,
+                    message: 'Good retrieved successfully',
+                    data: singleGood
+                });
+            } catch (error) {
+                console.error('Error fetching good:', error);
+                res.status(500).json({ 
+                    success: false,
+                    message: 'Internal server error' 
+                });
+            }
+        });
+        
         // ==============================================================
 
 
