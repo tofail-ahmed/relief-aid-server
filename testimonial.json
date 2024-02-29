@@ -1,0 +1,62 @@
+[
+  {
+    "img": "https://img.freepik.com/free-photo/proud-young-executive-ready-start_1139-303.jpg",
+    "name": "John Doe",
+    "designation": "Philanthropist",
+    "testimonial": "I've seen firsthand the impact of donations on the lives of the less fortunate. Your contributions can truly make a difference in providing food, shelter, and education to those in need."
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/short-haired-man-business-suit-carrying-two-registers_549566-318.jpg",
+    "name": "Jane Smith",
+    "designation": "Humanitarian",
+    "testimonial": "Donating to help the poor isn't just about giving money; it's about giving hope and opportunity. Together, we can create a brighter future for everyone."
+  },
+  {
+    "img": "https://media.istockphoto.com/id/1406307321/photo/portrait-of-successful-mature-businessman-standing-in-office.jpg?s=612x612&w=0&k=20&c=APB5rnVGubmhg4LmFyZJBBUU_duWEgbJ1m3AcygIeXw=",
+    "name": "Michael Johnson",
+    "designation": "Community Leader",
+    "testimonial": "As a community, we have a responsibility to uplift those who are struggling. Your generosity can bring about positive change and empower individuals to break the cycle of poverty."
+  },
+  {
+    "img": "https://www.shutterstock.com/image-photo/happy-african-american-young-businessman-260nw-1470743381.jpg",
+    "name": "Sarah Williams",
+    "designation": "Activist",
+    "testimonial": "Every act of kindness, no matter how small, has the power to transform lives. By supporting initiatives that assist the less fortunate, we can build a more compassionate and inclusive society."
+  },
+  {
+    "img": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?b=1&s=612x612&w=0&k=20&c=zVcDnGEyoHJXgsIVBLapEoAqNEr9nUlmooClC5j_218=",
+    "name": "David Lee",
+    "designation": "Volunteer Coordinator",
+    "testimonial": "Volunteering and donating are powerful ways to address social inequalities and create positive change. Your contributions enable us to provide essential resources and support to those in need."
+  },
+  {
+    "img": "https://media.istockphoto.com/id/1096419446/photo/modern-cheerful-business-man-in-deep-blue-shirt-standing-with-crossed-arms-isolated-on-gray.jpg?s=612x612&w=0&k=20&c=r4f-QedoEjL9KU-H96imU5UI5594wFUj2A9PgD8JXGY=",
+    "name": "Emily Brown",
+    "designation": "Nonprofit Founder",
+    "testimonial": "Through our nonprofit organization, we've been able to make a meaningful impact in the lives of impoverished communities. Your donations allow us to continue our vital work and reach even more individuals in need."
+  },
+  {
+    "img": "https://img.freepik.com/premium-photo/portrait-smiling-handsome-young-man-with-arms-crossed-isolated-gray-background_191555-4567.jpg",
+    "name": "Daniel Garcia",
+    "designation": "Advocate for the Poor",
+    "testimonial": "The generosity of donors like you plays a crucial role in providing essential services and support to vulnerable populations. Together, we can create a world where everyone has access to basic necessities and opportunities for a better life."
+  },
+  {
+    "img": "https://img.freepik.com/premium-photo/attractive-young-portuguese-man-looking-camera-with-his-arms-crossed-happy-expressiona_744381-684.jpg",
+    "name": "Amanda Rodriguez",
+    "designation": "Social Worker",
+    "testimonial": "As a social worker, I've witnessed the transformative power of donations in improving the well-being of individuals and families facing economic hardship. Your contributions make a real difference in building stronger, more resilient communities."
+  },
+  {
+    "img": "https://img.freepik.com/premium-photo/young-attractive-portuguese-man-looking-camera-with-arms-crossed-happy-expression_744381-688.jpg",
+    "name": "Christopher Thomas",
+    "designation": "Teacher",
+    "testimonial": "Educating our students about the importance of empathy, compassion, and giving back is essential for creating a more equitable society. Your support for programs that assist the less fortunate helps instill these values in future generations."
+  },
+  {
+    "img": "https://img.freepik.com/premium-photo/onfident-handsome-man-with-arms-crossed-body-smiling-looking-determined_911620-3112.jpg",
+    "name": "Jessica Martinez",
+    "designation": "Public Health Advocate",
+    "testimonial": "Access to healthcare, education, and basic necessities should be universal rights. By donating to organizations that work towards these goals, you're helping to build a world where everyone has the opportunity to thrive."
+  }
+]
