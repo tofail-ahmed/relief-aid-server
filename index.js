@@ -27,6 +27,7 @@ async function run() {
         const good = db.collection('goods');
         const gallery = db.collection("galleries");
         const testimonial = db.collection("testimonials");
+        const supply = db.collection("supplies");
 
         // User Registration
         app.post('/api/v1/register', async (req, res) => {
@@ -168,6 +169,22 @@ app.post('/api/v1/login', async (req, res) => {
                     success: true,
                     message: 'Testimonials retrieved successfully',
                     data: testimonials
+                });
+            } catch (error) {
+                console.error('Error fetching users:', error);
+                res.status(500).json({ 
+                    success: false,
+                    message: 'Internal server error' 
+                });
+            }
+        });
+        app.get('/api/v1/supplies', async (req, res) => {
+            try {
+                const supplies = await supply.find().toArray();
+                res.status(200).json({
+                    success: true,
+                    message: 'Supplies retrieved successfully',
+                    data: supplies
                 });
             } catch (error) {
                 console.error('Error fetching users:', error);
