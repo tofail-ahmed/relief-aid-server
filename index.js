@@ -120,9 +120,10 @@ app.post('/api/v1/login', async (req, res) => {
         app.get('/api/v1/goods/:id', async (req, res) => {
             try {
                 const id = req.params.id;
-                 const query = { _id: new ObjectId(id) };
-                const singleGood = await good.findOne(query); // Use findById method of Mongoose to find a good by its ID
                 
+                 const query = { _id: new ObjectId(id) };
+                 const singleGood = await good.findOne(query); // Use findById method of Mongoose to find a good by its ID
+                 console.log(singleGood);
                 if (!singleGood) {
                     return res.status(404).json({ 
                         success: false,
@@ -194,12 +195,40 @@ app.post('/api/v1/login', async (req, res) => {
                 });
             }
         });
+        app.post("/api/v1/supplies", async (req, res) => {
+          try {
+            const { title, category, image, amount, description } = req.body;
+            const newSupply = {
+              title,
+              category,
+              image,
+              amount,
+              description,
+            };
+            console.log(newSupply);
+            const result=await supply.insertOne(newSupply)
+            res.status(200).json({
+                success: true,
+                message: "New Supply found successfully",
+                data: result,
+              });
+          } catch (error) {
+            console.error("error posting supply", error);
+            res.status(500).json({
+              success: false,
+              message: "Internal server error or supplu not posted",
+              error,
+            });
+          }
+        });
 
         app.get("/api/v1/supplies/:id", async (req, res) => {
           try {
             const id = req.params.id;
+            console.log(id);
             const query = { _id: new ObjectId(id) };
             const singleSupply = await supply.findOne(query);
+            console.log(singleSupply);
             if (!singleSupply) {
               return res.status(401).json({
                 success: false,
