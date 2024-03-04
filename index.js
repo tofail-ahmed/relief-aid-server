@@ -194,6 +194,32 @@ app.post('/api/v1/login', async (req, res) => {
                 });
             }
         });
+
+        app.get("/api/v1/supplies/:id", async (req, res) => {
+          try {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const singleSupply = await supply.findOne(query);
+            if (!singleSupply) {
+              return res.status(401).json({
+                success: false,
+                message: "Supply not found",
+              });
+            }
+            res.status(200).json({
+              success: true,
+              message: "Supply found successfully",
+              data: singleSupply,
+            });
+          } catch (error) {
+            console.error("error fetching supply", error);
+            res.status(500).json({
+              success: false,
+              message: "Internal server error or Supply not found",
+              error,
+            });
+          }
+        });
         // ==============================================================
 
 
