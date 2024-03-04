@@ -225,10 +225,10 @@ app.post('/api/v1/login', async (req, res) => {
         app.get("/api/v1/supplies/:id", async (req, res) => {
           try {
             const id = req.params.id;
-            console.log(id);
+            // console.log(id);
             const query = { _id: new ObjectId(id) };
             const singleSupply = await supply.findOne(query);
-            console.log(singleSupply);
+            // console.log(singleSupply);
             if (!singleSupply) {
               return res.status(401).json({
                 success: false,
@@ -241,7 +241,7 @@ app.post('/api/v1/login', async (req, res) => {
               data: singleSupply,
             });
           } catch (error) {
-            console.error("error fetching supply", error);
+            // console.error("error fetching supply", error);
             res.status(500).json({
               success: false,
               message: "Internal server error or Supply not found",
@@ -249,6 +249,26 @@ app.post('/api/v1/login', async (req, res) => {
             });
           }
         });
+        app.delete("/api/v1/supplies/:id",async(req,res)=>{
+            try {
+                const id=req.params.id;
+                console.log(id)
+                const query={_id:new ObjectId(id)};
+                const result=await supply.deleteOne(query);
+                res.status(200).json({
+                    success:true,
+                    message:"Supply deleted successfully",
+                    data:result
+                })
+            } catch (error) {
+                console.error("error fetching supply", error);
+                res.status(500).json({
+                  success: false,
+                  message: "Internal server error or Supply not delted",
+                  error,
+                });
+            }
+        })
         // ==============================================================
 
 
