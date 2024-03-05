@@ -249,26 +249,52 @@ app.post('/api/v1/login', async (req, res) => {
             });
           }
         });
-        app.delete("/api/v1/supplies/:id",async(req,res)=>{
-            try {
-                const id=req.params.id;
-                console.log(id)
-                const query={_id:new ObjectId(id)};
-                const result=await supply.deleteOne(query);
-                res.status(200).json({
-                    success:true,
-                    message:"Supply deleted successfully",
-                    data:result
-                })
-            } catch (error) {
-                console.error("error fetching supply", error);
-                res.status(500).json({
-                  success: false,
-                  message: "Internal server error or Supply not delted",
-                  error,
-                });
-            }
-        })
+        app.delete("/api/v1/supplies/:id", async (req, res) => {
+          try {
+            const id = req.params.id;
+            // console.log(id)
+            const query = { _id: new ObjectId(id) };
+            const result = await supply.deleteOne(query);
+            res.status(200).json({
+              success: true,
+              message: "Supply deleted successfully",
+              data: result,
+            });
+          } catch (error) {
+            // console.error("error fetching supply", error);
+            res.status(500).json({
+              success: false,
+              message: "Internal server error or Supply not delted",
+              error,
+            });
+          }
+        });
+
+        app.put("/api/v1/supplies/:id", async (req, res) => {
+          try {
+            const id = req.params.id;
+            console.log(id);
+            // const body=req.body;
+            // console.log(body)
+            const { title, category, image, amount, description } = req.body;
+            const filter = { _id: new ObjectId(id) };
+            const updatedSupply = {
+              $set: { title, category, image, amount, description },
+            };
+            const result=await supply.updateOne(filter,updatedSupply);
+            res.status(200).json({
+                success: true,
+                message: "Supply Updated successfully",
+                data: result,
+              });
+          } catch (error) {
+            res.status(500).json({
+              success: false,
+              message: "Internal server error or Supply not updated",
+              error,
+            });
+          }
+        });
         // ==============================================================
 
 
